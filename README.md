@@ -1,65 +1,168 @@
-# 🩺 CompanioAI
+# 🩺 CompanioAI – AI-Powered Elderly Healthcare Monitoring Platform
 
-> An AI-powered healthcare companion that helps elderly individuals manage their daily health while keeping caregivers informed in real time.
+CompanioAI is an AI-powered healthcare platform designed to improve the quality of life for elderly individuals by providing intelligent health monitoring, medication management, emergency detection, and caregiver support.
 
----
-
-## 📖 Overview
-
-CompanioAI is an intelligent healthcare web application designed to improve the quality of life for senior citizens. The platform combines AI assistance, medication management, emergency alerts, caregiver monitoring, and voice interaction into a single easy-to-use system.
-
-The goal is to provide elderly users with a reliable digital companion while enabling caregivers to monitor health information remotely.
+The platform combines Artificial Intelligence, real-time monitoring, healthcare analytics, and caregiver collaboration into a single web application.
 
 ---
 
-## ✨ Features
+# 🌟 Features
 
-### 👴 Elderly Dashboard
+## 👴 Elderly Portal
 
-* Personalized dashboard
-* AI health companion
+* AI Health Assistant
 * Voice-based interaction
-* Daily health assistance
-* Easy-to-use interface
-
-### 👨‍⚕️ Caregiver Dashboard
-
-* Monitor elderly users
-* View medical history
-* Manage medicine schedules
-* Track appointments
-* Emergency notifications
-* Health summaries
-
-### 🤖 AI Assistant
-
-* Intelligent conversational assistant
-* Personalized responses
-* Memory-based conversations
-* Health-related guidance
-* Conversation summaries
-
-### 💊 Medicine Management
-
-* Medicine schedules
+* Health reporting
 * Medication reminders
-* History tracking
-
-### 🚨 Emergency System
-
-* Emergency alerts
-* Caregiver notification system
-* Health status monitoring
-
-### 🔐 Authentication
-
-* Secure Login
-* User Registration
-* Session Management
+* Emergency assistance
+* Medical history access
+* Daily health monitoring
 
 ---
 
-## 🛠️ Technology Stack
+## 👨‍⚕️ Caregiver Portal
+
+* Live monitoring dashboard
+* Elderly health overview
+* Medication tracking
+* Appointment management
+* Emergency alerts
+* Medical history
+* Daily AI reports
+
+---
+
+## 🤖 AI Health Monitoring System
+
+The application continuously monitors elderly users using AI.
+
+### Continuous Monitoring
+
+* Medication compliance
+* Missed medicines detection
+* Inactivity monitoring
+* AI conversation analysis
+* Emergency keyword detection
+* Health report analysis
+* Daily health score generation
+
+---
+
+## 🚨 Emergency Detection
+
+Automatically detects emergency situations such as:
+
+* Help
+* I fell
+* Chest pain
+* Can't breathe
+* Severe pain
+* Emergency
+* Call caregiver
+* Dizziness
+* Unconscious
+
+When detected, the system automatically:
+
+* Creates emergency alerts
+* Notifies caregivers
+* Records the incident
+* Calculates severity
+* Stores timestamps
+
+---
+
+## 🧠 AI Risk Assessment
+
+The AI evaluates multiple health indicators including:
+
+* Missed medications
+* Blood pressure
+* Heart rate
+* Oxygen saturation
+* Temperature
+* AI conversations
+* Manual health reports
+* User inactivity
+
+Risk Levels:
+
+* ✅ Normal
+* 🟢 Low Risk
+* 🟡 Medium Risk
+* 🟠 High Risk
+* 🔴 Critical
+
+Each assessment includes:
+
+* Confidence score
+* AI explanation
+* Recommended caregiver action
+
+---
+
+## 💊 Medication Intelligence
+
+* Medication reminders
+* Missed medicine detection
+* Late medicine detection
+* Consecutive missed dose detection
+* Medication compliance percentage
+* Compliance trends
+
+---
+
+## 📊 Live Caregiver Dashboard
+
+Real-time dashboard displaying:
+
+* Online elderly users
+* Last activity
+* Current health status
+* Medication status
+* AI Risk Level
+* Emergency alerts
+* Daily health score
+
+Dashboard automatically refreshes using AJAX.
+
+---
+
+## 📈 Health Timeline
+
+Chronological timeline including:
+
+* Medication records
+* AI conversations
+* Health reports
+* Emergency alerts
+* Caregiver actions
+
+---
+
+## 📋 Daily AI Health Reports
+
+Automatically generated reports include:
+
+* Overall health summary
+* Medication compliance
+* AI conversation summary
+* Health risk analysis
+* AI recommendations
+
+---
+
+## 🔔 Notifications
+
+Supports:
+
+* Dashboard notifications
+* Email notifications
+* Twilio SMS (optional)
+
+---
+
+# 🛠 Technology Stack
 
 ### Frontend
 
@@ -67,10 +170,12 @@ The goal is to provide elderly users with a reliable digital companion while ena
 * CSS3
 * Tailwind CSS
 * JavaScript
+* AJAX
 
 ### Backend
 
-* PHP
+* PHP 8+
+* Object-Oriented PHP
 
 ### Database
 
@@ -81,25 +186,27 @@ The goal is to provide elderly users with a reliable digital companion while ena
 * Groq API
 * Modular AI Services
 
+### Server
+
+* Apache (XAMPP)
+* PHP
+* MySQL
+
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 CompanioAI/
 │
 ├── ai/
-│   ├── AIService.php
-│   ├── ConversationService.php
-│   ├── MemoryService.php
-│   ├── PromptBuilder.php
-│   └── SummaryService.php
-│
 ├── api/
 ├── assets/
 ├── auth/
 ├── caregiver/
 ├── elderly/
+├── services/
+├── cron/
 ├── config/
 ├── database/
 ├── index.php
@@ -108,54 +215,35 @@ CompanioAI/
 
 ---
 
-## 🚀 Installation
+# 🚀 Installation
 
-### Clone the Repository
+1. Clone the repository
 
 ```bash
 git clone https://github.com/Ezekielg123/ComapnioAI.git
 ```
 
-### Navigate to the Project
+2. Move the project into your XAMPP `htdocs` folder.
 
-```bash
-cd ComapnioAI
-```
+3. Start Apache and MySQL.
 
-### Configure XAMPP
+4. Import `database/schema.sql` into MySQL.
 
-1. Move the project into:
-
-```
-C:\xampp\htdocs\
-```
-
-2. Start:
-
-* Apache
-* MySQL
-
-3. Import:
-
-```
-database/schema.sql
-```
-
-into phpMyAdmin.
-
-4. Update database credentials inside:
+5. Configure your database credentials in:
 
 ```
 config/database.php
 ```
 
-5. Configure your AI API key in:
+6. Add your own Groq API key in:
 
 ```
 config/ai.php
 ```
 
-6. Visit:
+**Note:** The API key is intentionally excluded from this repository for security reasons.
+
+7. Open:
 
 ```
 http://localhost/CompanioAI
@@ -163,58 +251,47 @@ http://localhost/CompanioAI
 
 ---
 
-## 📸 Screenshots
+# 🔒 Security
 
-Add screenshots of:
-
-* Home Page
-* Elderly Dashboard
-* Caregiver Dashboard
-* AI Chat
-* Voice Assistant
-* Medicine Schedule
-
----
-
-## 🔒 Security
-
+* Prepared SQL statements
+* Input validation
+* XSS prevention
+* CSRF protection
 * Secure authentication
-* Protected user sessions
-* Modular AI architecture
-* Secure API integration
+* Session management
+* API key excluded from GitHub
 
 ---
 
-## 📌 Future Improvements
+# 📌 Future Enhancements
 
-* Mobile application
 * Wearable device integration
-* AI health prediction
-* Multilingual support
+* IoT health sensors
+* AI predictive health analytics
 * Video consultation
-* SMS and WhatsApp alerts
+* Mobile application
+* WhatsApp notifications
 * Cloud deployment
-* AI emotion detection
+* Multi-language support
 
 ---
 
-## 👨‍💻 Developer
+# 👨‍💻 Developer
 
 **Ezekiel**
 
-GitHub:
-https://github.com/Ezekielg123
+GitHub: https://github.com/Ezekielg123
 
 ---
 
-## 📄 License
+# 📄 License
 
-This project is licensed under the MIT License.
+This project is released under the MIT License.
 
 ---
 
-## ⭐ Support
+# ⭐ Acknowledgements
+
+CompanioAI was developed as an AI-powered healthcare platform for elderly assistance, combining modern AI technologies with healthcare monitoring to demonstrate practical, real-world intelligent caregiving solutions.
 
 If you found this project useful, please consider giving it a ⭐ on GitHub.
-
-Your support helps improve CompanioAI and future AI healthcare innovations.
